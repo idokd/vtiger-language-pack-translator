@@ -45,13 +45,13 @@ class Translate {
 
     protected $permission = 0700;
 
-    public function __construct($vtiger = '', $target = '', $source = 'en_us') {
-        $this->vtiger = $vtiger; // TODO: remove trailing slash /
-        $src = explode('_', $source);
-        $tgt = explode('_', $target);
-        $this->source = $source;
-        $this->target = $target;
-        $this->translator = new GoogleTranslate($src[0]);
+    public function __construct($options) { // }$vtiger = '', $target = '', $source = 'en_us') {
+        $this->vtiger = $options['vtiger']; // TODO: remove trailing slash /
+        $this->source = $options['source'];
+        $this->target = $options['target'];
+        $src = explode('_', $this->source);
+        $tgt = explode('_', $this->target);
+        $this->translator = new GoogleTranslate($tgt[0], $src[0], array('google_api_key' => $options['google_api_key']));
         $this->translator->setSource($src[0]);
         $this->translator->setTarget($tgt[0]);
     }

@@ -211,7 +211,7 @@ class GoogleTranslate
     {
         $queryBodyArray = [
             'target'   => $this->target,
-            'key'   => 'AIzaSyCi8EPqnMCpdFj1D7VaalVb6dpRTrbhj0w',
+            'key'   => $this->options['google_api_key'],
             'format' => 'text',
             'q' => $string,
         ];

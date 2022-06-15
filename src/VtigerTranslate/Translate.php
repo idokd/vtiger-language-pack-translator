@@ -8,6 +8,7 @@ use VtigerTranslate\GoogleTranslate;
 // TODO: Translate from Package
 // TODO: Translate additional folders as cron
 // TODO: option to pack as package .zip with manifest.xml
+// TODO: handle  cron/language/phpmailer.lang-en.php
 
 /**
  * vTiger Automatic Google Translator
